@@ -7,15 +7,13 @@ import "./style.css";
 
 const messagesElement = document.querySelector(".messages");
 const messages = await getMessagesList();
-
 messagesList(messages, messagesElement);
 nicknameInput();
 messageInput();
 const handleStateChange = () => {
   const state = store.getState();
-  console.log(state);
   const messages = state.messages;
-  console.log(messages);
+  messagesList(messages, messagesElement);
 };
 store.subscribe(handleStateChange);
 

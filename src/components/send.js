@@ -1,4 +1,4 @@
-import { getMessagesList, sendMessage } from "../messagesApi";
+import { sendMessage } from "../messagesApi";
 import { messagesList } from "./messagesList";
 import store from "../store/createStore";
 
@@ -23,6 +23,7 @@ export function send() {
     const data = {
       nickname: nickname.value,
       message: message.value,
+      date: new Date(),
     };
 
     nickname.value = "";
@@ -33,8 +34,7 @@ export function send() {
       payload: data,
     });
 
-    const messages = await getMessagesList();
-    messagesList(messages, messagesElement);
+    messagesList(store.getState().messages, messagesElement);
     window.scrollTo(0, document.body.scrollHeight);
   });
 }
