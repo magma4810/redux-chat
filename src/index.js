@@ -10,11 +10,10 @@ const messagesFirst = await getMessagesList();
 messagesList(messagesFirst, messagesElement);
 nicknameInput();
 messageInput();
-const handleStateChange = async () => {
-  //   const state = store.getState();
-  //   const messages = state.messages;
-  const messagesFirst = await getMessagesList();
-  messagesList(messagesFirst, messagesElement);
+const handleStateChange = () => {
+  const state = store.getState();
+  const messages = state.messages;
+  messagesList(messages, messagesElement);
 };
 
 store.subscribe(handleStateChange);
