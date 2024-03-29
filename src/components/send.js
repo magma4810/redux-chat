@@ -1,5 +1,7 @@
 import { getMessagesList, sendMessage } from "../messagesApi";
 import { messagesList } from "./messagesList";
+import store from "../store/createStore";
+
 export function createButton(element) {
   const button = document.createElement("button");
   button.className = "send";
@@ -22,9 +24,15 @@ export function send() {
       nickname: nickname.value,
       message: message.value,
     };
+
     nickname.value = "";
     message.value = "";
     sendMessage(data);
+    store.dispatch({
+      type: "ADD_MESSAGE",
+      payload: data,
+    });
+
     const messages = await getMessagesList();
     messagesList(messages, messagesElement);
     window.scrollTo(0, document.body.scrollHeight);

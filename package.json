@@ -57,7 +57,7 @@
   },
   "homepage": "https://github.com/magma4810/redux-chat#readme",
   "lint-staged": {
-    "*.js": "prettier --write . && eslint . --fix",
+    "*.js": "eslint --fix",
     "*.{js,css}": "prettier --write"
   }
 }
