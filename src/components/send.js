@@ -1,0 +1,33 @@
+import { getMessagesList,sendMessage } from "../messagesApi";
+import { messagesList } from "./messagesList";
+export function createButton(element){
+    const button = document.createElement('button');
+    button.className = 'send';
+    const send = document.createElement('div');
+    send.innerHTML = "&#x1F4E8";
+    send.className = 'send';
+    
+    button.append(send);
+    element.append(button);
+}
+
+export function send(){
+    const nickname = document.querySelector('.nickname');
+    const message = document.querySelector('.message');
+    const sendButton = document.querySelector('.send');
+
+    sendButton.addEventListener('click', async () => {
+        const messagesElement = document.querySelector(".messages");
+        const data = {
+            nickname: nickname.value,
+            message: message.value
+        }
+        nickname.value = '';
+        message.value = '';
+        sendMessage(data);
+        const messages = await getMessagesList();
+        messagesList(messages,messagesElement);
+        window.scrollTo(0, document.body.scrollHeight);
+    })
+    
+}
