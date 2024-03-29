@@ -20,4 +20,5 @@ export function messagesList(messages, messagesElement) {
     objectDiv.append(descriptionElement);
     objectDiv.append(timeElement);
   });
+  window.scrollTo(0, document.body.scrollHeight);
 }

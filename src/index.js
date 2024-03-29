@@ -6,15 +6,15 @@ import store from "./store/createStore.js";
 import "./style.css";
 
 const messagesElement = document.querySelector(".messages");
-const messages = await getMessagesList();
-messagesList(messages, messagesElement);
+const messagesFirst = await getMessagesList();
+messagesList(messagesFirst, messagesElement);
 nicknameInput();
 messageInput();
-const handleStateChange = () => {
-  const state = store.getState();
-  const messages = state.messages;
-  messagesList(messages, messagesElement);
+const handleStateChange = async () => {
+  //   const state = store.getState();
+  //   const messages = state.messages;
+  const messagesFirst = await getMessagesList();
+  messagesList(messagesFirst, messagesElement);
 };
-store.subscribe(handleStateChange);
 
-window.scrollTo(0, document.body.scrollHeight);
+store.subscribe(handleStateChange);
