@@ -1,24 +1,23 @@
-export function messagesList(messages,messagesElement){
-    messages.forEach(obj => {
-        const objectDiv = document.createElement("div");
-        objectDiv.classList = 'message-list';
-        messagesElement.append(objectDiv);
+export function messagesList(messages, messagesElement) {
+  messages.forEach((obj) => {
+    const objectDiv = document.createElement("div");
+    objectDiv.classList = "message-list";
+    messagesElement.append(objectDiv);
 
-        const nameElement = document.createElement("h3");
-        nameElement.style = 'margin-left: 10px';
-        nameElement.textContent = obj.nickname || obj.name;
+    const nameElement = document.createElement("h3");
+    nameElement.style = "margin-left: 10px";
+    nameElement.textContent = obj.nickname || obj.name;
 
-        const descriptionElement = document.createElement("p");
-        descriptionElement.style = 'margin-left: 10px; font-size: 15px;';
-        descriptionElement.textContent = obj.message;
+    const descriptionElement = document.createElement("p");
+    descriptionElement.style = "margin-left: 10px; font-size: 15px;";
+    descriptionElement.textContent = obj.message;
 
-        const timeElement = document.createElement("h4");
-        timeElement.style = 'margin-left: 10px; color: grey;';
-        timeElement.textContent = obj.date;
+    const timeElement = document.createElement("h4");
+    timeElement.style = "margin-left: 10px; color: grey;";
+    timeElement.textContent = obj.date;
 
-        objectDiv.append(nameElement);
-        objectDiv.append(descriptionElement);
-        objectDiv.append(timeElement);
-    });
+    objectDiv.append(nameElement);
+    objectDiv.append(descriptionElement);
+    objectDiv.append(timeElement);
+  });
 }
-    

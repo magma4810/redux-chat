@@ -7,7 +7,7 @@ import "./style.css";
 const messagesElement = document.querySelector(".messages");
 const messages = await getMessagesList();
 
-messagesList(messages,messagesElement);
+messagesList(messages, messagesElement);
 nicknameInput();
 messageInput();
 window.scrollTo(0, document.body.scrollHeight);

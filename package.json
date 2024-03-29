@@ -2,7 +2,7 @@
   "name": "redux-chat",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
     "lint": "prettier --check . && eslint .",
@@ -57,7 +57,7 @@
   },
   "homepage": "https://github.com/magma4810/redux-chat#readme",
   "lint-staged": {
-    "*.js": "eslint --fix",
+    "*.js": "prettier --write . && eslint . --fix",
     "*.{js,css}": "prettier --write"
   }
 }
