@@ -30,7 +30,7 @@ input::placeholder {
   text-align: center;
 }
 
-button {
+.send-button {
   width: 60px;
   height: 60px;
   margin-left: 20px;
@@ -51,4 +51,9 @@ button {
   background-color: rgb(194, 223, 249);
   border: 5px solid rgb(179, 214, 244);
   border-radius: 8px;
+}
+
+.watch {
+  margin: 50vh auto;
+  display: block;
 }
