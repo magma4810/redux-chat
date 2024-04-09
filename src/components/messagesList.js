@@ -21,9 +21,10 @@ export function createCart(messagesElement, obj) {
 }
 
 export function messagesList(messages, messagesElement) {
+  const container = document.createElement("div");
   messages.forEach((obj) => {
-    createCart(messagesElement, obj);
+    createCart(container, obj);
   });
-  messagesElement.removeChild(document.querySelector(".load"));
+  messagesElement.innerHTML = container.innerHTML;
   window.scrollTo(0, document.body.scrollHeight);
 }

@@ -1,37 +1,3 @@
-// import { getMessagesList } from "../messagesApi";
-
-// // Создаем начальное состояние
-// const initialState = {
-//   loading: false,
-//   error: null,
-//   data: null
-// };
-// // Создаем редюсер
-// export function reducer(state = initialState, action) {
-//   switch (action.type) {
-//     case 'FETCH_DATA_START':
-//       return {
-//         ...state,
-//         loading: true,
-//         error: null
-//       };
-//     case 'FETCH_DATA_SUCCESS':
-//       return {
-//         ...state,
-//         loading: false,
-//         data: action.payload
-//       };
-//     case 'FETCH_DATA_ERROR':
-//       return {
-//         ...state,
-//         loading: false,
-//         error: action.payload
-//       };
-//     default:
-//       return state;
-//   }
-// }
-
 const initialState = {
   isLoading: false,
   data: undefined,

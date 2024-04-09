@@ -29,7 +29,7 @@ export async function getMessagesList() {
 //  * @returns {boolean}
 //  */
 export async function sendMessage(data) {
-  return fetch(`${config.firebaseBaseUrl}/${config.firebaseCollection}`, {
+  return await fetch(`${config.firebaseBaseUrl}/${config.firebaseCollection}`, {
     method: "POST",
     body: JSON.stringify({
       ...data,
@@ -43,12 +43,10 @@ export async function sendMessage(data) {
 }
 
 function observeWithXHR(cb) {
-  // https://firebase.google.com/docs/reference/rest/database#section-streaming
   const xhr = new XMLHttpRequest();
   let lastResponseLength = 0;
 
   xhr.addEventListener("progress", () => {
-    // console.log("xhr body", xhr.response);
     const body = xhr.response.substr(lastResponseLength);
     lastResponseLength = xhr.response.length;
 
@@ -71,7 +69,6 @@ function observeWithXHR(cb) {
 }
 
 function observeWithEventSource(cb) {
-  // https://developer.mozilla.org/en-US/docs/Web/API/EventSource/EventSource
   const evtSource = new EventSource(
     `${config.firebaseBaseUrl}/${config.firebaseCollection}`,
   );
