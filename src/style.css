@@ -1,0 +1,59 @@
+.send-messages-container {
+  background-color: grey;
+  border: 2px solid rgb(99, 98, 98);
+  border-radius: 8px;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.input {
+  border: 2px solid rgb(99, 98, 98);
+  margin-left: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.message {
+  height: 20vh;
+  width: 80vw;
+}
+
+.nickname {
+  height: 5vh;
+  width: 15vw;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+.send-button {
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.send {
+  font-size: 50px;
+}
+
+.message-list {
+  margin: 5px;
+  background-color: rgb(194, 223, 249);
+  border: 5px solid rgb(179, 214, 244);
+  border-radius: 8px;
+}
+
+.watch {
+  margin: 50vh auto;
+  display: block;
+}
